@@ -1,28 +1,20 @@
-import background from "../../assets/img/home_background.jpg";
+import Card from './Card.jsx';
 
 export function Home() {
   return (
-    <div className="mb-44">
-      <div
-        className="absolute inset-0 -z-50 w-full h-screen"
-        style={{
-          background: `linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${background})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      />
-      <div
-        className="text-base-100 flex flex-col justify-center h-screen"
-        style={{ height: "calc(100vh - 137px)" }}
-      >
-
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-col text-center w-full mb-20">
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">LOGO</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">TÍTULO</h1>
+        </div>
+        <div className="flex flex-wrap -m-4 text-center bg-[#717D96] py-24 px-4 rounded-lg">
+          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
+          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
+          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
+          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
+        </div>
       </div>
-      <div className="bg-black w-[1000px] h-[1000px] flex justify-evenly items-center">
-          <div className="bg-white w-[100px] h-[100px]"></div>
-          <div className="bg-white w-[100px] h-[100px]"></div>
-          <div className="bg-white w-[100px] h-[100px]"></div>
-          <div className="bg-white w-[100px] h-[100px]">LOGIN</div>
-      </div>
-    </div>
+    </section>
   );
 }

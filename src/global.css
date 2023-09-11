@@ -5,25 +5,7 @@
 /* Deixa as fontes mais nítidas */
 body {
   -webkit-font-smoothing: antialiased;
-  padding: 2rem 4.5rem;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding: 2rem 3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    padding: 2rem 8rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  body {
-    padding: 2rem 18rem;
-  }
+  background-color: #FFFFFF;
 }
 
 h1 {
