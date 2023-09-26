@@ -11,4 +11,4 @@ Recursos utilizados:
 - React.js;
 - Vite.js;
 - Tailwindcss;
-- Daisyui;
+- Daisyui.
