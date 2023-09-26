@@ -12,3 +12,5 @@ Recursos utilizados:
 - Vite.js;
 - Tailwindcss;
 - Daisyui.
+
+[Wireframe do projeto.](https://www.figma.com/file/bmSEtEeh9pP6dQ7Nu9tMRp/Projeto-Sistemas-Web?type=design&node-id=0-1&mode=design)
