@@ -8,7 +8,7 @@ export function Home() {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">LOGO</h1>
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">TÍTULO</h1>
         </div>
-        <div className="flex flex-wrap -m-4 text-center bg-[#717D96] py-24 px-4 rounded-lg">
+        <div className="flex flex-wrap -m-4 text-center bg-neutral py-24 px-4 rounded-lg">
           <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
           <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
           <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
