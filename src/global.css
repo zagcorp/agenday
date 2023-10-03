@@ -6,6 +6,8 @@
 body {
   -webkit-font-smoothing: antialiased;
   background-color: #FFFFFF;
+  background: url("./assets/background.jpg") no-repeat ;
+  background-size: 100vw 75vh;
 }
 
 h1 {
