@@ -6,15 +6,18 @@
 body {
   -webkit-font-smoothing: antialiased;
   background-color: #FFFFFF;
+  background: url("./assets/background.jpg") no-repeat ;
+  background-size: 100vw 75vh;
+  padding: 5rem;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 /* Estilos para as fontes e border-box reforçado para as tags que não recebem do root

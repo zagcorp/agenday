@@ -1,20 +1,23 @@
-import Card from './Card.jsx';
+import { Scheduler } from "../../components/Scheduler.jsx";
 
 export function Home() {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">LOGO</h1>
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">TÍTULO</h1>
-        </div>
-        <div className="flex flex-wrap -m-4 text-center bg-neutral py-24 px-4 rounded-lg">
-          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
-          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
-          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
-          <Card title="TÍTULO" desc="DESCRIÇÃO"></Card>
-        </div>
+    <>
+      <div className="container text-center px-5 m-auto">
+        <h1 className="title-font mb-4 text-accent">
+          LOGO
+        </h1>
+        <h1 className="title-font mb-4 text-accent">
+          FAÇA SEU AGENDAMENTO
+        </h1>
       </div>
-    </section>
+      <Scheduler />
+      <div className="p-4 bg-secondary rounded-xl my-16">
+        <h2 className="text-center title-font mb-4 text-primary">
+          ONDE NOS ENCONTRAR
+        </h2>
+        <iframe className="rounded-xl left-0" iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1750.1272300272763!2d-49.36793570858742!3d-28.68203385178282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9521827f07e5ea21%3A0xd8659e91fa09dc04!2sR.%20Treze%20de%20Maio%2C%2067%20-%20Comerciario%2C%20Crici%C3%BAma%20-%20SC%2C%2088802-290!5e0!3m2!1spt-BR!2sbr!4v1696876522228!5m2!1spt-BR!2sbr" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </>
   );
 }
