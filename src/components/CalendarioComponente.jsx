@@ -3,8 +3,6 @@ import { Calendar } from 'rsuite';
 
 export function CalendarioComponente() {
   return (
-    <div>
-      <Calendar />
-    </div>
+      <Calendar compact className="max-w-[25rem] text-white"/>
   );
 }

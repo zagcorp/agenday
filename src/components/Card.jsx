@@ -1,6 +1,6 @@
-export default function Card({ title }) {
+export default function Card({ title, updateSchedulerStep }) {
   return (
-    <button className="btn btn-success text-neutral px-4 py-6 min-w-[170px] min-h-[170px] bg-base-100 hover:text-base-100">
+    <button onClick={updateSchedulerStep} className="btn btn-success text-neutral px-4 py-6 min-w-[170px] min-h-[170px] bg-base-100 hover:text-base-100">
       <svg 
         fill="none"
         stroke="currentColor"
