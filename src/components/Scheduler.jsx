@@ -1,7 +1,8 @@
 import { Login } from "./Login.jsx";
 import { SelectService } from "./SelectService.jsx";
-import { CalendarioComponente } from "./CalendarioComponente.jsx";
+import { Calendar } from "./Calendar.jsx";
 import { useState } from "react";
+import { SelectHour } from "./SelectHour.jsx";
 
 export function Scheduler() {
   let [schedulerStep, setSchedulerStep] = useState(1);
@@ -19,7 +20,12 @@ export function Scheduler() {
             <Login />
           </div>
         )}
-        {schedulerStep === 2 && <CalendarioComponente />}
+        {schedulerStep === 2 && (
+        <div className="flex justify-between">
+          <Calendar />
+          <SelectHour/> 
+        </div>
+        )}
       </div>
     </div>
   );
