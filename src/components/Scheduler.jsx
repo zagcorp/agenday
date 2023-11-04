@@ -11,14 +11,16 @@ export function Scheduler() {
   }
 
   return (
-    <div className="h-[25rem] m-auto max-w-6xl text-center bg-neutral rounded-2xl">
-      {schedulerStep === 1 && (
-        <div className="flex h-full flex-nowrap">
-          <SelectService updateSchedulerStep={updateSchedulerStep} />
-          <Login />
-        </div>
-      )}
-      {schedulerStep === 2 && <CalendarioComponente/>}
+    <div className="relative w-3/4 overflow-hidden mx-auto max-w-6xl text-center bg-neutral rounded-2xl">
+      <div className="w-full h-full">
+        {schedulerStep === 1 && (
+          <div className="flex h-full flex-nowrap origin-right">
+            <SelectService updateSchedulerStep={updateSchedulerStep} />
+            <Login />
+          </div>
+        )}
+        {schedulerStep === 2 && <CalendarioComponente />}
+      </div>
     </div>
   );
 }
