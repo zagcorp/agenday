@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~rsuite/dist/rsuite.min.css';
 
 /* Deixa as fontes mais nítidas */
 body {
