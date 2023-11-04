@@ -1,6 +1,6 @@
 export function Navbar() {
   return (
-    <div className="navbar absolute top-0 left-0 w-full flex-none bg-base-100">
+    <div className="navbar sm:absolute top-0 left-0 w-full flex-none bg-base-100">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">LOGO</a>
       </div>

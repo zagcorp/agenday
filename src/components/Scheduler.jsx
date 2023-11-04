@@ -11,10 +11,10 @@ export function Scheduler() {
   }
 
   return (
-    <div className="relative w-3/4 overflow-hidden mx-auto max-w-6xl text-center bg-neutral rounded-2xl">
+    <div className="relative w-full overflow-hidden mx-auto max-w-6xl text-center bg-neutral sm:rounded-2xl">
       <div className="w-full h-full">
         {schedulerStep === 1 && (
-          <div className="flex h-full flex-nowrap origin-right">
+          <div className="sm:flex h-full origin-right overflow-y-auto">
             <SelectService updateSchedulerStep={updateSchedulerStep} />
             <Login />
           </div>

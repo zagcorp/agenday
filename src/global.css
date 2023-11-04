@@ -9,6 +9,10 @@ body {
   background: url("./assets/background.jpg") no-repeat ;
   background-size: 100vw 75vh;
   padding: 5rem;
+
+  @media (max-width: 640px) {
+    padding: 0rem;
+  }
 }
 
 h1 {
