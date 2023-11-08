@@ -1,7 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
 export function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [availableDates, setAvailableDates] = useState([]);
+
+  // TODO: trocar o serviço conforme o clique no card
+  const service = 1;
+  
+  useEffect(() => {
+    fetch(`http://localhost:8080/agendamentos/servicos/${service}/dias-disponiveis?inicio=${getFirstDate()}&fim=${getLastDate()}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      // TODO: não consegui fazer a desgraça do spring retornar a data certo então vai ficar assim por enquanto
+      setAvailableDates(data.map(x => new Date(x[0], x[1], x[2])));
+    })
+    .catch((err) => {
+      setAvailableDates([]);
+    });
+  }, []);
 
   const handlePrevMonth = () => {
     setCurrentDate(
@@ -25,7 +42,7 @@ export function Calendar() {
       const date = new Date(year, month, i);
 
       days.push(
-        <Day key={date.getTime()} date={date}>
+        <Day key={date.getTime()} date={date} available={availableDates.some(x => x.getDate() == date.getDate())}>
           {i}
         </Day>
       );
@@ -39,6 +56,18 @@ export function Calendar() {
 
     return days;
   };
+
+  const getFirstDate = () => {
+    return formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1));
+  }
+
+  const getLastDate = () => {
+    return formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0));
+  }
+
+  const formatDate = (date) => {
+    return date.toISOString().split('T')[0]
+  }
 
   return (
     <div className={"flex-1 text-base-100 rounded-lg shadow-md p-4 m-2"}>
@@ -74,12 +103,13 @@ export function Calendar() {
   );
 }
 
-export default function Day({ children, date }) {
+export default function Day({ children, date, available }) {
   const { setCurrentDay } = Date.now();
 
   return (
     <div
-      className={"text-base-100 hover:text-secondary cursor-pointer"}
+      // TODO: vai ficar esse green por enquanto msm kkkkkk
+      className={"text-base-100 hover:text-secondary cursor-pointer"} style={available ? {color: "green"} : null}
       onClick={() => date !== undefined && setCurrentDay(date)}
     >
       {children}
