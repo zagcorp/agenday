@@ -21,7 +21,7 @@ export function SelectHour() {
     }, [date]);
 
     return (
-        <div className="flex-1 bg-base-100 w-full py-4">
+        <div className="bg-base-100 rounded-r-lg flex-1 bg-base-100 w-full py-4">
             {availableHours.length > 0 ? (
                 <div>
                 <h1 className="text-2xl font-bold mb-4">Horários Disponíveis</h1>

@@ -3,12 +3,10 @@ import { Scheduler } from "../../components/Scheduler.jsx";
 export function Home() {
   return (
     <>
-      <div style={{height: "calc(100vh - 20rem)"}} className="flex flex-col gap-4 justify-center">
-        <h1 className="title-font text-center text-accent">FAÇA SEU AGENDAMENTO</h1>
-        <Scheduler />
-      </div>
+      <h1 className="title-font text-center text-accent">FAÇA SEU AGENDAMENTO</h1>
+      <Scheduler />
 
-      <div className="p-4 bg-neutral sm:rounded-xl my-16">
+      <div className="p-4 bg-neutral sm:rounded-xl">
         <h2 className="text-center title-font mb-4 text-secondary">
           ONDE NOS ENCONTRAR
         </h2>

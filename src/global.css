@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '~rsuite/dist/rsuite.min.css';
 
 /* Deixa as fontes mais nítidas */
 body {
@@ -9,7 +8,7 @@ body {
   background-color: #FFFFFF;
   background: url("./assets/background.jpg") no-repeat ;
   background-size: 100vw 75vh;
-  padding: 5rem;
+  padding: 9rem 5rem;
 
   @media (max-width: 640px) {
     padding: 0rem;

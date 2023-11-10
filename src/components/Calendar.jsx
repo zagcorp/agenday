@@ -72,7 +72,7 @@ export function Calendar() {
   }
 
   return (
-    <div className={"flex-1 text-base-100 rounded-lg shadow-md p-4 m-2"}>
+    <div className="flex-1 flex flex-col justify-center text-base-100 rounded-l-lg p-4 bg-neutral">
       <div className="flex justify-between mb-2">
         <button onClick={handlePrevMonth}>{"<"}</button>
         <div>

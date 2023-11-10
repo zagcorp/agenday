@@ -14,23 +14,21 @@ export function Scheduler() {
   }
 
   return (
-    <div className="relative w-full overflow-hidden mx-auto max-w-6xl text-center bg-neutral sm:rounded-2xl">
-      <div className="w-full h-full">
+    <div className="relative w-full sm:h-[60vh] mx-auto text-center sm:rounded-2xl mb-10">
         {schedulerStep === 1 && (
-          <div className="sm:flex h-full origin-right overflow-y-auto">
+          <div className="sm:flex h-full origin-right overflow-y-auto justify-between">
             <SelectService updateSchedulerStep={updateSchedulerStep} />
             <Login />
           </div>
         )}
         {schedulerStep === 2 && (
-        <div className="flex justify-between">
+        <div className="flex h-full w-full">
           <DateContext.Provider value={{date, setDate}}>
             <Calendar />
             <SelectHour /> 
           </DateContext.Provider>
         </div>
         )}
-      </div>
     </div>
   );
 }
