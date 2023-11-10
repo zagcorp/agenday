@@ -1,10 +1,12 @@
+import React, { useState, useContext } from "react";
 import { Login } from "./Login.jsx";
 import { SelectService } from "./SelectService.jsx";
 import { Calendar } from "./Calendar.jsx";
-import { useState } from "react";
 import { SelectHour } from "./SelectHour.jsx";
+import DateContext from './contexts/DateContext';
 
 export function Scheduler() {
+  const [date, setDate] = useState(useContext(DateContext).date);
   let [schedulerStep, setSchedulerStep] = useState(1);
 
   function updateSchedulerStep() {
@@ -22,8 +24,10 @@ export function Scheduler() {
         )}
         {schedulerStep === 2 && (
         <div className="flex justify-between">
-          <Calendar />
-          <SelectHour/> 
+          <DateContext.Provider value={{date, setDate}}>
+            <Calendar />
+            <SelectHour /> 
+          </DateContext.Provider>
         </div>
         )}
       </div>

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import DateContext from './contexts/DateContext';
+import DateUtils from '../utils/DateUtils'
 
 export function Calendar() {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const { date, setDate } = useContext(DateContext);
+
   const [availableDates, setAvailableDates] = useState([]);
 
   // TODO: trocar o serviço conforme o clique no card
@@ -13,36 +16,39 @@ export function Calendar() {
     .then((data) => {
       console.log(data);
       // TODO: não consegui fazer a desgraça do spring retornar a data certo então vai ficar assim por enquanto
-      setAvailableDates(data.map(x => new Date(x[0], x[1], x[2])));
+      setAvailableDates(data.map(x => new Date(x[0], x[1] - 1, x[2])));
     })
     .catch((err) => {
       setAvailableDates([]);
     });
-  }, []);
+  }, [availableDates]);
 
   const handlePrevMonth = () => {
-    setCurrentDate(
-      new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1)
+    setDate(
+      new Date(date.getFullYear(), date.getMonth() - 1, 1)
     );
   };
 
   const handleNextMonth = () => {
-    setCurrentDate(
-      new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)
+    setDate(
+      new Date(date.getFullYear(), date.getMonth() + 1, 1)
     );
   };
 
   const renderCalendarDays = () => {
     const days = [];
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+    const year = date.getFullYear();
+    const month = date.getMonth();
     const lastDay = new Date(year, month + 1, 0).getDate();
 
     for (let i = 1; i <= lastDay; i++) {
       const date = new Date(year, month, i);
 
       days.push(
-        <Day key={date.getTime()} date={date} available={availableDates.some(x => x.getDate() == date.getDate())}>
+        <Day 
+          key={date.getTime()} 
+          date={date} setDate={setDate} 
+          available={availableDates.some(x => DateUtils.formatDate(x) === DateUtils.formatDate(date))}>
           {i}
         </Day>
       );
@@ -58,15 +64,11 @@ export function Calendar() {
   };
 
   const getFirstDate = () => {
-    return formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1));
+    return DateUtils.formatDate(new Date(date.getFullYear(), date.getMonth(), 1));
   }
 
   const getLastDate = () => {
-    return formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0));
-  }
-
-  const formatDate = (date) => {
-    return date.toISOString().split('T')[0]
+    return DateUtils.formatDate(new Date(date.getFullYear(), date.getMonth() + 1, 0));
   }
 
   return (
@@ -75,12 +77,12 @@ export function Calendar() {
         <button onClick={handlePrevMonth}>{"<"}</button>
         <div>
           <h3 className="text-center capitalize font-semibold col-span-4">
-            {currentDate.toLocaleDateString(undefined, {
+            {date.toLocaleDateString(undefined, {
               month: "long",
             })}
           </h3>
           <span className="text-sm">
-            {currentDate.toLocaleDateString(undefined, {
+            {date.toLocaleDateString(undefined, {
               year: "numeric",
             })}
           </span>
@@ -103,14 +105,12 @@ export function Calendar() {
   );
 }
 
-export default function Day({ children, date, available }) {
-  const { setCurrentDay } = Date.now();
-
+export default function Day({ children, date, setDate, available }) {
   return (
     <div
       // TODO: vai ficar esse green por enquanto msm kkkkkk
       className={"text-base-100 hover:text-secondary cursor-pointer"} style={available ? {color: "green"} : null}
-      onClick={() => date !== undefined && setCurrentDay(date)}
+      onClick={() => date !== undefined && setDate(date)}
     >
       {children}
     </div>
