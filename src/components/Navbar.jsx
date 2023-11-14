@@ -5,8 +5,8 @@ export function Navbar() {
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">
         <label className="swap swap-flip text-9xl"> <input type="checkbox" />
-          <div className="swap-on"><img src=".\src\assets\logo_agenday.png" alt="Your SVG" className="h-10 w-15 m-auto" /></div>
-          <div className="swap-off"><img src=".\src\assets\logo_fran.png" alt="Your SVG" className="h-10 w-15 m-auto" /></div>
+          <div className="swap-on"><img src=".\src\assets\logo_agenday.png" alt="logo agenday" className="h-10 w-15 m-auto" /></div>
+          <div className="swap-off"><img src=".\src\assets\logo_fran.png" alt="logo fran" className="h-10 w-15 m-auto" /></div>
 </label>
           
           
