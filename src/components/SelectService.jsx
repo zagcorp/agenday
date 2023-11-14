@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./Card.jsx";
 
-export function SelectService({updateSchedulerStep}) {
+export function SelectService({nextStep}) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -11,16 +11,16 @@ export function SelectService({updateSchedulerStep}) {
       console.log(data);
       setCards(data.map(x => 
         <Card 
-          updateSchedulerStep={updateSchedulerStep} 
+          nextStep={nextStep} 
           title={x.nome} 
           image={(x.midias != null && x.midias.length > 0) ? x.midias[0].foto : null}
         />));
     })
     .catch((err) => {
       setCards([
-        <Card updateSchedulerStep={updateSchedulerStep} title="TÍTULO"></Card>,
-        <Card updateSchedulerStep={updateSchedulerStep} title="TÍTULO"></Card>,
-        <Card updateSchedulerStep={updateSchedulerStep} title="TÍTULO"></Card>
+        <Card nextStep={nextStep} title="TÍTULO"></Card>,
+        <Card nextStep={nextStep} title="TÍTULO"></Card>,
+        <Card nextStep={nextStep} title="TÍTULO"></Card>
       ]);
     });
   }, []);
