@@ -3,7 +3,7 @@ import { Scheduler } from "../../components/Scheduler.jsx";
 export function Home() {
   return (
     <main className="flex flex-col gap-10">
-      <h1 className="title-font text-white text-center text-accent">FAÇA SEU AGENDAMENTO</h1>
+      <div className="m-auto p-5 bg-base-100 sm:rounded-xl shadow-md"><h1 className=" text-neutral title-font text-center">FAÇA SEU AGENDAMENTO</h1></div>
 
       <Scheduler />
 
