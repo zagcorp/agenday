@@ -1,8 +1,19 @@
+import YourSvg from "/src/assets/logo_fran.svg";
+
 export function Navbar() {
   return (
     <div className="navbar sm:absolute top-0 left-0 w-full flex-none bg-base-100 px-20">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">LOGO</a>
+        <a className="btn btn-ghost normal-case text-xl">
+        <label className="swap swap-flip text-9xl"> <input type="checkbox" />
+          <div className="swap-on"><img src=".\src\assets\logo_agenday.png" alt="Your SVG" className="h-10 w-15 m-auto" /></div>
+          <div className="swap-off"><img src=".\src\assets\logo_fran.png" alt="Your SVG" className="h-10 w-15 m-auto" /></div>
+</label>
+          
+          
+          
+          
+          </a>
       </div>
 
       <div className="flex-none">
