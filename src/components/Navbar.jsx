@@ -1,9 +1,10 @@
 export function Navbar() {
   return (
-    <div className="navbar sm:absolute top-0 left-0 w-full flex-none bg-base-100">
+    <div className="navbar sm:absolute top-0 left-0 w-full flex-none bg-base-100 px-20">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">LOGO</a>
       </div>
+
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg

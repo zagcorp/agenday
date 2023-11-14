@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Login } from "./Login.jsx";
 import { SelectService } from "./SelectService.jsx";
 import { Calendar } from "./Calendar.jsx";
@@ -14,21 +14,21 @@ export function Scheduler() {
   }
 
   return (
-    <div className="relative w-full sm:h-[60vh] mx-auto text-center sm:rounded-2xl mb-10">
-        {schedulerStep === 1 && (
-          <div className="sm:flex h-full origin-right overflow-y-auto justify-between">
-            <SelectService updateSchedulerStep={updateSchedulerStep} />
-            <Login />
-          </div>
-        )}
-        {schedulerStep === 2 && (
+    <div className="relative w-full sm:h-[60vh] mx-auto text-center sm:rounded-2xl shadow-md">
+      {schedulerStep === 1 && (
+        <div className="sm:flex h-full origin-right overflow-y-auto justify-between">
+          <SelectService updateSchedulerStep={updateSchedulerStep} />
+          <Login />
+        </div>
+      )}
+      {schedulerStep === 2 && (
         <div className="flex h-full w-full">
-          <DateContext.Provider value={{date, setDate}}>
+          <DateContext.Provider value={{ date, setDate }}>
             <Calendar />
-            <SelectHour /> 
+            <SelectHour />
           </DateContext.Provider>
         </div>
-        )}
+      )}
     </div>
   );
 }
