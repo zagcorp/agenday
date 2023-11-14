@@ -1,4 +1,3 @@
-import YourSvg from "/src/assets/logo_fran.svg";
 
 export function Navbar() {
   return (
