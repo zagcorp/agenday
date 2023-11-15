@@ -12,6 +12,7 @@ export function SelectService({nextStep}) {
       setCards(data.map(x => 
         <Card 
           nextStep={nextStep} 
+          id={x.id}
           title={x.nome} 
           image={(x.midias != null && x.midias.length > 0) ? x.midias[0].foto : null}
         />));

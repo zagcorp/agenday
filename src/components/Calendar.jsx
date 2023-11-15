@@ -1,14 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import DateContext from './contexts/DateContext';
+import ServiceContext from './contexts/ServiceContext';
 import DateUtils from '../utils/DateUtils'
 
 export function Calendar() {
   const { date, setDate } = useContext(DateContext);
+  const { service } = useContext(ServiceContext);
 
   const [availableDates, setAvailableDates] = useState([]);
-
-  // TODO: trocar o serviço conforme o clique no card
-  const service = 1;
 
   useEffect(() => {
     fetch(`http://localhost:8080/agendamentos/servicos/${service}/dias-disponiveis?inicio=${getFirstDate()}&fim=${getLastDate()}`)
@@ -77,21 +76,18 @@ export function Calendar() {
         <button className="px-6" onClick={handlePrevMonth}>
           {"<"}
         </button>
-
         <div>
           <h3 className="text-center capitalize font-semibold col-span-4">
             {date.toLocaleDateString(undefined, {
               month: "long",
             })}
           </h3>
-
           <span className="text-sm px-10">
             {date.toLocaleDateString(undefined, {
               year: "numeric",
             })}
           </span>
         </div>
-
         <button className="px-6" onClick={handleNextMonth}>
           {">"}
         </button>

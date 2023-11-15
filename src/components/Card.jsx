@@ -1,6 +1,16 @@
-export default function Card({ title, image, nextStep }) {
+import { useContext } from "react";
+import ServiceContext from './contexts/ServiceContext';
+
+export default function Card({ id, title, image, nextStep }) {
+  const { setService } = useContext(ServiceContext);
+
+  const onClick = () => {
+    setService(id);
+    nextStep();
+  };
+
   return (
-    <button onClick={nextStep} className="btn btn-success text-neutral px-4 py-6 min-w-[170px] min-h-[170px] bg-base-100 hover:text-base-100">
+    <button onClick={onClick} className="btn btn-success text-neutral px-4 py-6 min-w-[170px] min-h-[170px] bg-base-100 hover:text-base-100">
       <svg 
         fill="none"
         stroke="currentColor"
