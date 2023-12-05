@@ -45,7 +45,7 @@ export function Scheduling({ nextStep, goBack }) {
             descricao: description,
             servico: service,
             funcionario: employee,
-            cliente: 0
+            cliente: 1
         };
 
         const requestOptions = {
